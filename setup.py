@@ -12,6 +12,7 @@ PYTHON_MODULES = [
     'hetzner.reset',
     'hetzner.robot',
     'hetzner.server',
+    'hetzner.wol',
     'hetzner.util',
     'hetzner.util.addr',
     'hetzner.util.http',
