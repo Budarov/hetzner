@@ -19,6 +19,7 @@ from hetzner import RobotError, WebRobotError
 from hetzner.rdns import ReverseDNS, ReverseDNSManager
 from hetzner.reset import Reset
 from hetzner.util import addr, scraping
+from hetzner.wol import WOL
 
 __all__ = ['AdminAccount', 'IpAddress', 'RescueSystem', 'Server', 'Subnet',
            'IpManager', 'SubnetManager']
@@ -430,6 +431,7 @@ class Server(object):
         self.rdns = ReverseDNSManager(self.conn, self.ip)
         self._admin_account = None
         self.logger = logging.getLogger("Server #{0}".format(self.number))
+        self.wol = WOL(self)
 
     @property
     def admin(self):
