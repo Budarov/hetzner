@@ -7,5 +7,5 @@ class WOL(object):
         self.server = server
 
     def send_wol(self):
-        result = self.conn.put('/wol/{0}'.format(str(self.server.number)), None)
+        result = self.conn.post('/wol/{0}'.format(str(self.server.number)), None)
         return result
